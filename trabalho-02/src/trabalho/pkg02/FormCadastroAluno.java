@@ -11,10 +11,8 @@ import javax.swing.*;
 // Aluno: Felipe Barretto
 public class FormCadastroAluno extends JFrame implements ActionListener
 {
-    // Lista de alunos em memória
     private List<Aluno> alunos = new ArrayList<Aluno>();
 
-    // Componentes
     private JLabel lblNome = new JLabel("Nome:");
     private JLabel lblIdade = new JLabel("Idade:");
     private JLabel lblEndereco = new JLabel("Endereço:");
@@ -34,7 +32,6 @@ public class FormCadastroAluno extends JFrame implements ActionListener
         setLocation(50, 50);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Painel superior: GridLayout 3x2, hgap e vgap = 10
         JPanel painelSuperior = new JPanel(new GridLayout(3, 2, 10, 10));
         painelSuperior.add(lblNome);
         painelSuperior.add(txtNome);
@@ -43,20 +40,17 @@ public class FormCadastroAluno extends JFrame implements ActionListener
         painelSuperior.add(lblEndereco);
         painelSuperior.add(txtEndereco);
 
-        // Painel inferior: 4 botões em GridLayout
         JPanel painelInferior = new JPanel(new GridLayout(1, 4));
         painelInferior.add(btnOk);
         painelInferior.add(btnLimpar);
         painelInferior.add(btnMostrar);
         painelInferior.add(btnSair);
 
-        // Registro dos listeners
         btnOk.addActionListener(this);
         btnLimpar.addActionListener(this);
         btnMostrar.addActionListener(this);
         btnSair.addActionListener(this);
 
-        // BorderLayout para posicionar os 2 painéis
         setLayout(new BorderLayout());
         add(painelSuperior, BorderLayout.CENTER);
         add(painelInferior, BorderLayout.SOUTH);
